@@ -1,5 +1,0 @@
-{
-  "name": "loggator-web",
-  "compatibility_date": "2026-01-20", // Update to the day you deploy
-  "pages_build_output_dir": "./dist",
-}
