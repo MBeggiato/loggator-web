@@ -1,40 +1,91 @@
 ---
-title: Welcome to Starlight
-description: Get started building your docs site with Starlight.
-template: splash # Remove or comment out this line to display the site sidebar on this page.
+title: Loggator
+description: Docker Log Aggregator with AI-Search powered by Meilisearch and OpenRouter
+template: splash
 hero:
-  tagline: Congrats on setting up a new Starlight project!
+  tagline: Collect, index, and search container logs with a modern web UI and AI assistant
   image:
-    file: ../../assets/houston.webp
+    file: ../../assets/logo.png
   actions:
-    - text: Example Guide
-      link: /guides/example/
-      icon: right-arrow
-    - text: Read the Starlight docs
-      link: https://starlight.astro.build
+    - text: Quick Start
+      link: /guides/quickstart/
+      icon: rocket
+      variant: primary
+    - text: View on GitHub
+      link: https://github.com/MBeggiato/loggator
       icon: external
       variant: minimal
 ---
 
-import { Card, CardGrid } from '@astrojs/starlight/components';
+import { Card, CardGrid } from "@astrojs/starlight/components";
 
-## Next steps
+## Why Loggator?
 
 <CardGrid stagger>
-	<Card title="Update content" icon="pencil">
-		Edit `src/content/docs/index.mdx` to see this page change.
-	</Card>
-	<Card title="Change page layout" icon="document">
-		Delete `template: splash` in `src/content/docs/index.mdx` to display a
-		sidebar on this page.
-	</Card>
-	<Card title="Add new content" icon="add-document">
-		Add Markdown or MDX files to `src/content/docs` to create new pages.
-	</Card>
-	<Card title="Configure your site" icon="setting">
-		Edit your `sidebar` and other config in `astro.config.mjs`.
-	</Card>
-	<Card title="Read the docs" icon="open-book">
-		Learn more in [the Starlight Docs](https://starlight.astro.build/).
-	</Card>
+  <Card title="🤖 AI-Powered Search" icon="sparkles">
+    Chat with an AI assistant about your logs using natural language. Ask
+    questions like "Show me all errors from the last hour" and get instant,
+    accurate results.
+  </Card>
+  <Card title="🔍 Full-Text Search" icon="magnifier">
+    Fast and powerful log search with MeiliSearch. Filter by container, stream
+    type, timestamps, and more.
+  </Card>
+  <Card title="📊 Real-time Dashboard" icon="chart">
+    Live log streaming, statistics, and histograms to visualize your container
+    activity at a glance.
+  </Card>
+  <Card title="🐳 Label-Based Filtering" icon="approve-check">
+    Only monitor the containers you choose with simple Docker labels. Secure and
+    easy to configure.
+  </Card>
+  <Card title="🌐 Multi-Language UI" icon="translate">
+    Built-in support for English and German with easy extensibility for
+    additional languages.
+  </Card>
+  <Card title="🔔 Smart Notifications" icon="information">
+    Get notified of new releases and stay up to date with the latest features
+    and improvements.
+  </Card>
+</CardGrid>
+
+## Key Features
+
+- **AI Log Assistant** - Natural language queries with automatic tool calling for log search, container info, and health checks
+- **Persistent Chat History** - Your conversations are saved across sessions
+- **Markdown Responses** - Syntax-highlighted code blocks and formatted output
+- **Container Health Analysis** - Automated analysis of container logs to identify issues
+- **Log Histograms** - Visualize log activity patterns over time
+- **Real-time Streaming** - Watch logs as they happen with live updates
+
+## Quick Example
+
+```yaml
+# Add this label to any container you want to monitor
+services:
+  my-app:
+    image: my-app:latest
+    labels:
+      - "loggator.enable=true"
+```
+
+Then ask the AI: _"Show me all errors from my-app in the last 2 hours"_
+
+The AI will automatically search your logs, analyze the results, and provide actionable insights.
+
+## Get Started
+
+<CardGrid>
+  <Card title="Quick Start" icon="rocket">
+    Get Loggator up and running in minutes with Docker Compose. [Quick Start
+    Guide →](/guides/quickstart/)
+  </Card>
+  <Card title="Configuration" icon="setting">
+    Configure Meilisearch, AI models, and container filters. [Configuration
+    Guide →](/configuration/environment/)
+  </Card>
+  <Card title="API Reference" icon="open-book">
+    Integrate Loggator with your own tools and scripts. [API Documentation
+    →](/api/overview/)
+  </Card>
 </CardGrid>
